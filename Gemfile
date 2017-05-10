@@ -2,9 +2,9 @@ source "https://rubygems.org"
 
 ruby '2.4.1'
 
-gem "decidim", git: "https://github.com/AjuntamentdeBarcelona/decidim.git"
-gem "decidim-debates", path: "engines/decidim-debates"
-gem "decidim-dataviz", path: "engines/decidim-dataviz"
+gem "decidim", git: "https://github.com/decidim/decidim.git"
+gem "decidim-debates", path: "decidim-debates"
+gem "decidim-dataviz", path: "decidim-dataviz"
 #gem "decidim-accountability", git: "https://github.com/decidim/decidim-accountability.git"
 gem "decidim-accountability", path: "../decidim-accountability"
 
@@ -14,12 +14,12 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem "decidim-dev", git: "https://github.com/decidim/decidim.git"
 end
 
 group :development do
   gem "progressbar"
-  gem 'rainbow', "2.1.0"
-  gem "decidim-dev", git: "https://github.com/AjuntamentdeBarcelona/decidim.git"
+  gem 'rainbow', "~>2.2.0"
   gem 'web-console'
   gem 'listen'
   gem 'spring'
