@@ -11,6 +11,7 @@ gem "decidim-accountability", path: "../decidim-accountability"
 gem 'uglifier', '>= 1.3.0'
 gem 'lograge'
 gem 'faker'
+gem 'rack_password'
 
 group :development, :test do
   gem 'byebug', platform: :mri
