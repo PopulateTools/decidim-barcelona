@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby '2.4.1'
 
-gem "decidim", git: "https://github.com/decidim/decidim.git"
+gem "decidim", "~> 0.3.2"
 gem "decidim-debates", path: "decidim-debates"
 gem "decidim-dataviz", path: "decidim-dataviz"
 #gem "decidim-accountability", git: "https://github.com/decidim/decidim-accountability.git"
@@ -15,13 +15,12 @@ gem 'rack_password'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git"
+  gem "decidim-dev", "~> 0.3.2"
 end
 
 group :development do
   gem "progressbar"
   gem 'rainbow', "~>2.2.0"
-  gem 'web-console'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'

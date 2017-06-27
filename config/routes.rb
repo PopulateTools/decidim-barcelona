@@ -4,8 +4,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   get "processes/:process_slug", to: redirect { |params, _request|
     process = Decidim::ParticipatoryProcess.where(slug: params[:process_slug]).first
-    return "/404" unless process
-    "/processes/#{process.id}"
+    process ? "/processes/#{process.id}" : "/404"
   }, constraints: { process_slug: /[^0-9]+/ }
 
   feature_translations = {
@@ -36,6 +35,9 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.roles.include?("admin") } do
     mount Sidekiq::Web => '/sidekiq'
   end
+
+  get "/accountability", to: "static#accountability", as: :accountability_static
+  get "/accountability/sections", to: "static#accountability_sections", as: :accountability_sections
 
   mount Decidim::Core::Engine => "/"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
