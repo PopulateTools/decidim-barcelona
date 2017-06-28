@@ -1,21 +1,9 @@
-GIT
-  remote: https://github.com/decidim/decidim-accountability.git
-  revision: ab82c8a39706cb7cb0311606fb78010cce9028c8
-  specs:
-    decidim-accountability (0.0.1)
-      decidim-comments
-      decidim-core
-
 PATH
   remote: ../decidim-accountability
   specs:
     decidim-accountability (0.0.1)
       decidim-comments
       decidim-core
-      kaminari (~> 1.0.0.rc1)
-      rails (~> 5.0.2)
-      rectify (~> 0.8)
-      searchlight (~> 4.1.0)
 
 PATH
   remote: decidim-dataviz
