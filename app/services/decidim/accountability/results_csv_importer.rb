@@ -30,6 +30,8 @@ module Decidim
             params = {}
             params["result"] = row.to_hash
 
+            params["result"]["progress"] = row["weighted_progress"]
+
             if row["result_id"].present?
               existing_result = Decidim::Accountability::Result.find_by(id: row['result_id'].to_i)
               unless existing_result.present?
